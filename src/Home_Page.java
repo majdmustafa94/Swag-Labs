@@ -35,7 +35,7 @@ public class Home_Page {
 //		}
 //		else {System.out.println("QA test Failed");}
 		
-		int expectItems= 11;
+		int expectItems= 6;
 		
 		List<WebElement> Buttons = driver.findElements(By.className("btn"));
 		for(int i=0; i<Buttons.size(); i++) {
