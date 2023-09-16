@@ -1,5 +1,8 @@
+import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 
@@ -32,6 +35,21 @@ public class Home_Page {
 //		}
 //		else {System.out.println("QA test Failed");}
 		
+		int expectItems= 11;
+		
+		List<WebElement> Buttons = driver.findElements(By.className("btn"));
+		for(int i=0; i<Buttons.size(); i++) {
+			Buttons.get(i).click();			
+		}
+		
+		String actualItems= driver.findElement(By.xpath("//*[@id=\"shopping_cart_container\"]/a/span")).getText();
+		
+		int theActualnum= Integer.parseInt(actualItems);
+		
+		Assert.assertEquals(theActualnum, expectItems);
+
+        
+
 		
 		
 	}
